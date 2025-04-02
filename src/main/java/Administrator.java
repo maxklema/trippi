@@ -1,5 +1,13 @@
 public class Administrator {
-    private int AdminID;
+    private int adminID;
+
+    public int getAdminID() {
+        return this.adminID;
+    }
+
+    public void setAdminID(int newAdminID) {
+        this.adminID = newAdminID;
+    }
 
     private Boolean deleteUser(int userID) {
         System.out.println("User " + userID + " Deleted");
@@ -23,5 +31,4 @@ public class Administrator {
     private void addExperienceProvider(String name, String website, String corporateEmail) {
         System.out.println("Name: " + name + "\nWebsite: " + website + "\nCorporateEmail: " + corporateEmail);
     }
-
 }
