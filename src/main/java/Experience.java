@@ -4,12 +4,14 @@ import java.util.HashSet;
 public class Experience {
 
     private int experienceID;
+    private ArrayList<Availability> availabilitySchedule;
     private ArrayList<PhotoObject> pictures;
     private String description;
     private HashSet<Review> reviews;
 
     public Experience(int experienceID) {
         this.experienceID = experienceID;
+        availabilitySchedule = new ArrayList();
         pictures = new ArrayList<>();
         description = "";
         reviews = new HashSet<>();
@@ -17,6 +19,7 @@ public class Experience {
 
     public Experience(int experienceID, String description) {
         this.experienceID = experienceID;
+        availabilitySchedule = new ArrayList();
         pictures = new ArrayList<>();
         this.description = description;
         reviews = new HashSet<>();
@@ -27,6 +30,22 @@ public class Experience {
     }
     public void setExperienceID(int ID) {
         this.experienceID = ID;
+    }
+
+    public ArrayList<Availability> getAvailabilitySchedule() {
+        return availabilitySchedule;
+    }
+    public void addAvailability(Availability a) {
+        this.availabilitySchedule.add(a);
+    }
+    public void removeAvailability(Availability a) {
+        this.availabilitySchedule.remove(a);
+    }
+    public void setAvailabilitySchedule(ArrayList<Availability> availabilities) {
+        this.availabilitySchedule = availabilities;
+    }
+    public void clearAvailabilitySchedule() {
+        this.availabilitySchedule.clear();
     }
 
     public ArrayList<PhotoObject> getPictures() {
