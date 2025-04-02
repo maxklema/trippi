@@ -1,0 +1,30 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Files for IntelliJ IDEA
+.idea/
+*.ipr
+*.iws
+*.iml
+
+# Files for Eclipse
+.settings/
+.project
+.classpath
+
+# Files for NetBeans
+nbproject/
+build/
+dist/
+
+# Temporary files
+tmp/
+*.tmp
