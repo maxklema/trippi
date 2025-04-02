@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Customer {
     private int customerID;
     private ArrayList<Trip> trips;
@@ -6,7 +8,7 @@ public class Customer {
     private int phoneNumber;
 
     // constructor
-    public Cusomter(int customerID, String address, int phoneNumber){
+    public Customer(int customerID, String address, int phoneNumber){
         this.customerID = customerID;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -21,16 +23,17 @@ public class Customer {
     }
 
     private Trip getTrip(int tripID){
-        for (trip : this.trips){
-            if (trip.getID() == tripID){
+        for (Trip trip : this.trips){
+            if (trip.getTripID() == tripID){
                 return trip;
             }
         }
+        return null;
     }
 
     private Boolean hasTrip(int tripID) {
-        for (trip : this.trips){
-            if (trip.getID() == tripID){
+        for (Trip trip : this.trips){
+            if (trip.getTripID() == tripID){
                 return true;
             }
         }
