@@ -1,17 +1,24 @@
 import java.util.ArrayList;
 
 public class Customer {
-    private int customerID;
+    private String name;
     private ArrayList<Trip> trips;
     private ArrayList<Review> reviews;
     private String address;
     private int phoneNumber;
 
     // constructor
-    public Customer(int customerID, String address, int phoneNumber) {
-        this.customerID = customerID;
+    public Customer(String name, String address, int phoneNumber) {
+        this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void addTrip(Trip trip) {
