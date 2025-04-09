@@ -7,16 +7,31 @@ public class Main {
         // Create an Administrator
         Administrator admin = new Administrator();
 
-        // Create an Experience Provider, approve through admin
+        // Create Experience Providers, approve through admin
         ExperienceProvider airlineProvider = new ExperienceProvider();
         admin.approveExperienceProvider(airlineProvider);
 
-        // Create an Experience Provider Employee through Experience Provider
-        ExperienceProviderEmployee employee = new ExperienceProviderEmployee(1, 1, "Harold Emp", "harrye", "harrye@seet.com");
+        ExperienceProvider hotelProvider = new ExperienceProvider();
+        admin.approveExperienceProvider(hotelProvider);
 
-        // Airline, Hotel, Restaurant
+        ExperienceProvider restaurantProvider = new ExperienceProvider();
+        admin.approveExperienceProvider(restaurantProvider);
+
+        // Create an Experience Provider Employee through Experience Provider
+        ExperienceProviderEmployee employee = new ExperienceProviderEmployee(1, 1, "Harold Emp", "harrye", "harrye@seet.com", airlineProvider);
+        airlineProvider.addEmployee(employee);
 
         // Add some Experiences through the Experience Provider
+        airlineProvider.addExperience(new Experience(1, "Fly to Norway"));
+        airlineProvider.addExperience(new Experience(2, "Fly to Japan"));
+        airlineProvider.addExperience(new Experience(3, "Fly to Norway"));
+        hotelProvider.addExperience(new Experience(4, "Stay in London"));
+        hotelProvider.addExperience(new Experience(5, "Stay in Chicago"));
+        hotelProvider.addExperience(new Experience(6, "Stay in Rome"));
+        restaurantProvider.addExperience(new Experience(7, "Eat at Cantankerous Crustaceon in Rome"));
+        restaurantProvider.addExperience(new Experience(8, "Eat at Cantankerous Crustaceon in Bikini Atoll"));
+        restaurantProvider.addExperience(new Experience(9, "Eat at Cantankerous Crustaceon in Aberdeen"));
+
         // Create a Customer
         // Create some Trips
         // Schedule Experiences on the trips

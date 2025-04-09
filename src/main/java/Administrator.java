@@ -29,6 +29,6 @@ public class Administrator {
     }
 
     public ExperienceProvider addExperienceProvider(String name, String website, String corporateEmail) {
-        return newExperienceProvider(name, website, corporateEmail);
+        return new ExperienceProvider(name, website, corporateEmail);
     }
 }
