@@ -1,10 +1,13 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class ExperienceProvider 
 {
     private int ExperienceProviderID;
     private String name;
     private ArrayList<Experience> experiences;
     private String website;
-    private string corporateEmail;
+    private String corporateEmail;
     private ExperienceProviderEmployee owner;
     private ArrayList<ExperienceProviderEmployee> employees;
 
@@ -18,7 +21,7 @@ public class ExperienceProvider
         this.corporateEmail = email;
         owner = null;
         employees = new ArrayList<ExperienceProviderEmployee>();
-        experiences = new ArrayLIst<Experience>();
+        experiences = new ArrayList<Experience>();
 
     }
     
@@ -28,14 +31,14 @@ public class ExperienceProvider
         return experiences;
     }
 
-    public createEmployeeAccount(String name, String email, String username)
+    public void createEmployeeAccount(String name, String email, String username)
     {
-        employees.add(new ExperienceProviderEmployee(666, ExperienceProviderID, name, username, email));
+        employees.add(new ExperienceProviderEmployee(666, ExperienceProviderID, name, username, email, this));
     }
 
-    public closeEmployeeAccount(User employee)
+    public void closeEmployeeAccount(User employee)
     {
-        if(!employee instanceof ExperienceProviderEmployee)
+        if(!(employee instanceof ExperienceProviderEmployee))
         {
             return;
         }
@@ -43,7 +46,7 @@ public class ExperienceProvider
         employees.remove((ExperienceProviderEmployee)employee);
     }
 
-    public addOwner(Employee e)
+    public void addOwner(ExperienceProviderEmployee e)
     {
         owner = e;
     }
