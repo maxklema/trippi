@@ -2,16 +2,12 @@
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.concurrent.ScheduledExecutorService;
-
-import javax.naming.directory.AttributeModificationException;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 
         // Create an Administrator
         Administrator admin = new Administrator();
@@ -45,14 +41,9 @@ public class Main {
         ArrayList<PhotoObject> photos = new ArrayList<PhotoObject>();
         Experience experienceOne = new Experience(1);
 
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            Date startDate = sdf.parse("2025-04-23");
-            Date endDate = sdf.parse("2025-04-29");
-        }
-        catch (ParseException e) {
-            e.printStackTrace();
-        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date startDate = sdf.parse("2025-04-23");
+        Date endDate = sdf.parse("2025-04-29");
 
         ScheduledExperience scheduledExperienceOne = new ScheduledExperience(experienceOne, "The best hotel in the world!", startDate, endDate);
 
