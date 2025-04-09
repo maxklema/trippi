@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExperienceProvider {
-    private int ExperienceProviderID;
     private String name;
     private ArrayList<Experience> experiences;
     private String website;
@@ -11,7 +10,6 @@ public class ExperienceProvider {
     private ArrayList<ExperienceProviderEmployee> employees;
 
     public ExperienceProvider(String name, String website, String email) {
-        ExperienceProviderID = 999;
         this.name = name;
         this.website = website;
         this.corporateEmail = email;
@@ -26,6 +24,33 @@ public class ExperienceProvider {
 
     public ArrayList<Experience> getExperiences() {
         return experiences;
+    }
+    public void addExperience(Experience e) {
+        this.experiences.add(e);
+    }
+    public void removeExperience(Experience e) {
+        this.experiences.remove(e);
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public String getEmail() {
+        return corporateEmail;
+    }
+    public void setEmail(String email) {
+        this.corporateEmail = email;
+    }
+
+    public ExperienceProviderEmployee getOwner() {
+        return owner;
+    }
+    public void setOwner(ExperienceProviderEmployee owner) {
+        this.owner = owner;
     }
 
     public ExperienceProviderEmployee createEmployeeAccount(String name, String email, String username) {
