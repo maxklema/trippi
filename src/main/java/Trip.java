@@ -5,6 +5,12 @@ public class Trip
     private int tripID;
     public ArrayList<ScheduledExperience> ScheduledExperiences;
 
+    public Trip()
+    {
+        tripID = 5337;
+        ScheduledExperiences = new ArrayList<ScheduledExperience>();
+
+    } 
     public int getTripID() {
         return tripID;
     }
