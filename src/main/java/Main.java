@@ -1,6 +1,8 @@
 // package trippi.example.com.example;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.concurrent.ScheduledExecutorService;
 
 import javax.naming.directory.AttributeModificationException;
@@ -14,13 +16,13 @@ public class Main {
         Administrator admin = new Administrator();
 
         // Create Experience Providers, approve through admin
-        ExperienceProvider airlineProvider = new ExperienceProvider();
+        ExperienceProvider airlineProvider = new ExperienceProvider("SEET Air", "air.seet.com", "@seet.com");
         admin.approveExperienceProvider(airlineProvider);
 
         // Create an Experience Provider Employee through Experience Provider
-        ExperienceProvider hotelProvider - new ExperienceProvider(null, null, null)
+        ExperienceProvider hotelProvider = new ExperienceProvider("SEET Villas", "seetvillas.com", "@seetvillas.com");
 
-        ExperienceProvider restaurantProvider = new ExperienceProvider();
+        ExperienceProvider restaurantProvider = new ExperienceProvider("Cantankerous Crustaceon", "cantacrust.com", "@cantacrust.com");
         admin.approveExperienceProvider(restaurantProvider);
 
         // Create an Experience Provider Employee through Experience Provider
@@ -39,8 +41,7 @@ public class Main {
         ArrayList<Availability> availabilities = new ArrayList<Availability>();
         HashSet<Review> reviews = new HashSet<Review>();
         ArrayList<PhotoObject> photos = new ArrayList<PhotoObject>();
-        Experience experienceOne = new Experience(1, availabilities, photos, "Stay in the world famous Seet Hotel!",
-                reviews);
+        Experience experienceOne = new Experience(1, availabilities, photos, "Stay in the world famous Seet Hotel!", reviews);
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date startDate = new sdf.parse("2025-04-23");
