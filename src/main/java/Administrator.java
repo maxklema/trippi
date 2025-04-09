@@ -19,7 +19,7 @@ public class Administrator {
         return true;
     }
 
-    public Boolean ApproveExperienceProvider(ExperienceProvider experienceProvider) {
+    public Boolean approveExperienceProvider(ExperienceProvider experienceProvider) {
         System.out.println("Approved Experience Provider for " + experienceProvider.getName());
         return true;
     }
