@@ -6,7 +6,8 @@ public record ScheduledExperience(
         Date timeStart,
         Date timeEnd) implements Comparable<ScheduledExperience> {
 
-    compareTo(ScheduledExperience other)
+    @Override
+    public int compareTo(ScheduledExperience other)
     {
         return timeStart.compareTo(other.timeStart);
     }
