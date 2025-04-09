@@ -1,16 +1,38 @@
 public class Administrator {
-    private int adminID;
-
-    public int getAdminID() {
-        return this.adminID;
+    
+    private String name;
+    private String userName;
+    private String email;
+    
+    public Administrator(String name, String userName, String email) {
+        this.name = name;
+        this.userName = userName;
+        this.email = email;
     }
 
-    public void setAdminID(int newAdminID) {
-        this.adminID = newAdminID;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUsername() {
+        return userName;
+    }
+    public void setUsername(String userName) {
+        this.userName = userName;
     }
 
     public Boolean deleteUser(User user) {
-        System.out.println("User " + user.getUserID() + " Deleted");
+        System.out.println("User " + user.getName() + " Deleted");
         return true;
     }
 
@@ -25,7 +47,7 @@ public class Administrator {
     }
 
     public void closeAccount(User user) {
-        System.out.println("Deleted account for " + user.getUserID());
+        System.out.println("Deleted account for " + user.getName());
     }
 
     public ExperienceProvider addExperienceProvider(String name, String website, String corporateEmail) {

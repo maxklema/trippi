@@ -6,10 +6,6 @@ public interface User {
         ExperienceProviderEmployee
     }
 
-    int getUserID();
-
-    void setUserID(int ID);
-
     String getName();
 
     void setName(String name);

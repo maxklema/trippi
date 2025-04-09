@@ -29,7 +29,7 @@ public class ExperienceProvider {
     }
 
     public void createEmployeeAccount(String name, String email, String username) {
-        employees.add(new ExperienceProviderEmployee(666, ExperienceProviderID, name, username, email, this));
+        employees.add(new ExperienceProviderEmployee(name, username, email, this));
     }
 
     public void closeEmployeeAccount(User employee) {

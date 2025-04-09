@@ -2,28 +2,17 @@ import java.util.ArrayList;
 
 public class ExperienceProviderEmployee implements User {
 
-    private int userID;
-    private int employeeID;
     private String name;
     public String userName;
     private String email;
     private User.UserType userType = User.UserType.ExperienceProviderEmployee;
     private ExperienceProvider employer;
 
-    public ExperienceProviderEmployee(int userID, int employeeID, String name, String userName, String email, ExperienceProvider employer) {
-        this.userID = userID;
-        this.employeeID = employeeID;
+    public ExperienceProviderEmployee(String name, String userName, String email, ExperienceProvider employer) {
         this.name = name;
         this.userName = userName;
         this.email = email;
         this.employer = employer;
-    }
-
-    public int getEmployeeID() {
-        return employeeID;
-    }
-    public void setEmployeeID(int ID) {
-        this.employeeID = ID;
     }
 
     public Experience addExperience(ArrayList<Availability> availabilities, ArrayList<PhotoObject> pictures, String description) {
@@ -31,15 +20,6 @@ public class ExperienceProviderEmployee implements User {
         e.setAvailabilitySchedule(availabilities);
         e.setPictures(pictures);
         return e;
-    }
-
-    @Override
-    public int getUserID() {
-        return userID;
-    }
-    @Override
-    public void setUserID(int ID) {
-        this.userID = ID;
     }
 
     @Override

@@ -10,17 +10,21 @@ public class Main {
     public static void main(String[] args) throws ParseException {
 
         // Create an Administrator
-        Administrator admin = new Administrator();
+        Administrator admin = new Administrator("Stoat Jefferson", "jeffystoat", "jeffes@trippi.com");
 
         // Create Experience Providers, approve through admin
         ExperienceProvider airlineProvider = new ExperienceProvider("SEET Air", "air.seet.com", "@seet.com");
+        System.out.println(airlineProvider.getName() + " was created!");
         admin.approveExperienceProvider(airlineProvider);
-
+        
         // Create an Experience Provider Employee through Experience Provider
         ExperienceProvider hotelProvider = new ExperienceProvider("SEET Villas", "seetvillas.com", "@seetvillas.com");
+        System.out.println(hotelProvider.getName() + " was created!");
+        admin.approveExperienceProvider(hotelProvider);
 
         ExperienceProvider restaurantProvider = new ExperienceProvider("Cantankerous Crustaceon", "cantacrust.com",
                 "@cantacrust.com");
+        System.out.println(restaurantProvider.getName() + " was created!");
         admin.approveExperienceProvider(restaurantProvider);
 
         // Create an Experience Provider Employee through Experience Provider
@@ -29,8 +33,6 @@ public class Main {
         hotelProvider.createEmployeeAccount("Jonas Schastanovich", "jonass", "jonass@seetvillas.com");
 
         restaurantProvider.createEmployeeAccount("Signor Grancho", "mrkrab", "grancho@cantacrust.com");
-
-        // Add some Experiences through the Experience Provider
 
         // Create a Customer
         Customer newCustomer = new Customer("Joe Mama", "4010 West Housing Drive", 260433590);
@@ -52,9 +54,5 @@ public class Main {
         scheduledExperiences.add(scheduledExperienceOne);
 
         Trip tripOne = new Trip(1);
-
-        // Schedule Experiences on the trips
-        // Have the customer leave some Reviews
-        // Remove a review through Admninistrator
     }
 }
