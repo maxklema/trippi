@@ -28,14 +28,18 @@ public class Main {
         admin.approveExperienceProvider(restaurantProvider);
 
         // Create an Experience Provider Employee through Experience Provider
-        airlineProvider.createEmployeeAccount("Harold Emp", "harrye", "harrye@seet.com");
+        ExperienceProviderEmployee e = airlineProvider.createEmployeeAccount("Harold Emp", "harrye", "harrye@seet.com");
+        System.out.println("Created Employee: "+e.getName());
 
-        hotelProvider.createEmployeeAccount("Jonas Schastanovich", "jonass", "jonass@seetvillas.com");
+        e= hotelProvider.createEmployeeAccount("Jonas Schastanovich", "jonass", "jonass@seetvillas.com");
+        System.out.println("Created Employee: "+e.getName());
 
-        restaurantProvider.createEmployeeAccount("Signor Grancho", "mrkrab", "grancho@cantacrust.com");
+        e= restaurantProvider.createEmployeeAccount("Signor Grancho", "mrkrab", "grancho@cantacrust.com");
+        System.out.println("Created Employee: "+e.getName());
 
         // Create a Customer
         Customer newCustomer = new Customer("Joe Mama", "4010 West Housing Drive", 260433590);
+        System.out.println("Created A Very foolish Customer:"+newCustomer.getName());
 
         // Create some Trips
         ArrayList<Availability> availabilities = new ArrayList<Availability>();
