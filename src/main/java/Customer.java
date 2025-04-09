@@ -8,7 +8,7 @@ public class Customer {
     private int phoneNumber;
 
     // constructor
-    public Customer(int customerID, String address, int phoneNumber){
+    public Customer(int customerID, String address, int phoneNumber) {
         this.customerID = customerID;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -22,9 +22,9 @@ public class Customer {
         return this.trips;
     }
 
-    public Trip getTrip(int tripID){
-        for (Trip trip : this.trips){
-            if (trip.getTripID() == tripID){
+    public Trip getTrip(int tripID) {
+        for (Trip trip : this.trips) {
+            if (trip.getTripID() == tripID) {
                 return trip;
             }
         }
@@ -32,8 +32,8 @@ public class Customer {
     }
 
     public Boolean hasTrip(int tripID) {
-        for (Trip trip : this.trips){
-            if (trip.getTripID() == tripID){
+        for (Trip trip : this.trips) {
+            if (trip.getTripID() == tripID) {
                 return true;
             }
         }
