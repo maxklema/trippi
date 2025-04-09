@@ -9,26 +9,26 @@ public class Administrator {
         this.adminID = newAdminID;
     }
 
-    private Boolean deleteUser(int userID) {
+    public Boolean deleteUser(int userID) {
         System.out.println("User " + userID + " Deleted");
         return true;
     }
 
-    private Boolean deleteReview(int reviewID) {
+    public Boolean deleteReview(int reviewID) {
         System.out.println("Review " + reviewID + " deleted");
         return true;
     }
 
-    private Boolean ApproveExperienceProvider(int experienceProviderID) {
+    public Boolean ApproveExperienceProvider(int experienceProviderID) {
         System.out.println("Approved Experience Provider for " + experienceProviderID);
         return true;
     }
 
-    private void closeAccount(int userID) {
+    public void closeAccount(int userID) {
         System.out.println("Deleted account for " + userID);
     }
 
-    private void addExperienceProvider(String name, String website, String corporateEmail) {
+    public void addExperienceProvider(String name, String website, String corporateEmail) {
         System.out.println("Name: " + name + "\nWebsite: " + website + "\nCorporateEmail: " + corporateEmail);
     }
 }

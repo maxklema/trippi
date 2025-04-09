@@ -14,12 +14,13 @@ public class Trip
 
     public String generateItenerary()
     {
-       String toReturn = "Your Itenerary:\n";
+       StringBuilder result = new StringBuilder();
+       result.append("Your Itenerary:\n");
        for(ScheduledExperience se : ScheduledExperiences)
        {
-            toReturn+=se+"\n";
+            result.append(se.toString()).append("\n");
        }
-       return toReturn;
+       return result.toString();
     }
 
     public void addExperienceToTrip(ScheduledExperience ex )

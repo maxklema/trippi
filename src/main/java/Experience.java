@@ -11,7 +11,7 @@ public class Experience {
 
     public Experience(int experienceID) {
         this.experienceID = experienceID;
-        availabilitySchedule = new ArrayList();
+        availabilitySchedule = new ArrayList<>();
         pictures = new ArrayList<>();
         description = "";
         reviews = new HashSet<>();
@@ -19,7 +19,7 @@ public class Experience {
 
     public Experience(int experienceID, String description) {
         this.experienceID = experienceID;
-        availabilitySchedule = new ArrayList();
+        availabilitySchedule = new ArrayList<>();
         pictures = new ArrayList<>();
         this.description = description;
         reviews = new HashSet<>();

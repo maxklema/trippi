@@ -14,15 +14,15 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    private void addTrip(Trip trip) {
+    public void addTrip(Trip trip) {
         this.trips.add(trip);
     }
 
-    private ArrayList<Trip> getTrips() {
+    public ArrayList<Trip> getTrips() {
         return this.trips;
     }
 
-    private Trip getTrip(int tripID){
+    public Trip getTrip(int tripID){
         for (Trip trip : this.trips){
             if (trip.getTripID() == tripID){
                 return trip;
@@ -31,7 +31,7 @@ public class Customer {
         return null;
     }
 
-    private Boolean hasTrip(int tripID) {
+    public Boolean hasTrip(int tripID) {
         for (Trip trip : this.trips){
             if (trip.getTripID() == tripID){
                 return true;
@@ -40,7 +40,7 @@ public class Customer {
         return false;
     }
 
-    private void addReview(Review review) {
+    public void addReview(Review review) {
         this.reviews.add(review);
     }
 
