@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.concurrent.ScheduledExecutorService;
 
 import javax.naming.directory.AttributeModificationException;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -35,7 +37,7 @@ public class Main {
         // Add some Experiences through the Experience Provider
 
         // Create a Customer
-        Customer newCustomer = new Customer(1, "4010 West Housing Drive", 260433590);
+        Customer newCustomer = new Customer("Joe Mama", "4010 West Housing Drive", 260433590);
 
         // Create some Trips
         ArrayList<Availability> availabilities = new ArrayList<Availability>();
@@ -43,12 +45,16 @@ public class Main {
         ArrayList<PhotoObject> photos = new ArrayList<PhotoObject>();
         Experience experienceOne = new Experience(1, availabilities, photos, "Stay in the world famous Seet Hotel!", reviews);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date startDate = new sdf.parse("2025-04-23");
-        Date endDate = new sdf.parse("2025-04-29");
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date startDate = sdf.parse("2025-04-23");
+            Date endDate = sdf.parse("2025-04-29");
+        }
+        catch (ParseException e) {
+            e.printStackTrace();
+        }
 
-        ScheduledExperience scheduledExperienceOne = new ScheduledExperience(experienceOne,
-                "The best hotel in the world!", startDate, endDate);
+        ScheduledExperience scheduledExperienceOne = new ScheduledExperience(experienceOne, "The best hotel in the world!", startDate, endDate);
 
         Trip tripOne = new Trip(1, new ArrayList<ScheduledExperience>(scheduledExperienceOne));
 
