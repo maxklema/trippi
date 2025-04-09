@@ -8,13 +8,15 @@ public class ExperienceProviderEmployee implements User {
     public String userName;
     private String email;
     private User.UserType userType = User.UserType.ExperienceProviderEmployee;
+    private ExperienceProvider employer;
 
-    public ExperienceProviderEmployee(int userID, int employeeID, String name, String userName, String email) {
+    public ExperienceProviderEmployee(int userID, int employeeID, String name, String userName, String email, ExperienceProvider employer) {
         this.userID = userID;
         this.employeeID = employeeID;
         this.name = name;
         this.userName = userName;
         this.email = email;
+        this.employer = employer;
     }
 
     public int getEmployeeID() {
@@ -71,6 +73,14 @@ public class ExperienceProviderEmployee implements User {
     public void setUsername(String userName) {
         this.userName = userName;
     }
+
+    public ExperienceProvider getEmployer() {
+        return employer;
+    }
+    public void setEmployer(ExperienceProvider employer) {
+        this.employer = employer;
+    }
+
 
     @Override
     public void closeAccount() {
