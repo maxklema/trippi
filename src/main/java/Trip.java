@@ -5,6 +5,12 @@ public class Trip
     private int tripID;
     public ArrayList<ScheduledExperience> ScheduledExperiences;
 
+    public Trip()
+    {
+        tripID = 5337;
+        ScheduledExperiences = new ArrayList<ScheduledExperience>();
+
+    } 
     public int getTripID() {
         return tripID;
     }
@@ -25,12 +31,20 @@ public class Trip
 
     public void addExperienceToTrip(ScheduledExperience ex )
     {
-       ScheduledExperiences.add(ex);
+       
+        ScheduledExperiences.add(ex);
 
     }
 
-    public void removeExperienceFromTrip(int experienceID)
+    public void removeExperienceFromTrip(Experience e)
     {
-        throw new UnsupportedOperationException("Not implemented");
+        for(ScheduledExperience se: ScheduledExperiences )
+        {
+            if(se.experience == e){
+                ScheduledExperiences.remove(se);
+                return;
+            }
+        }
+        
     }
 }
