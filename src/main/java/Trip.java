@@ -25,12 +25,20 @@ public class Trip
 
     public void addExperienceToTrip(ScheduledExperience ex )
     {
-       ScheduledExperiences.add(ex);
+       
+        ScheduledExperiences.add(ex);
 
     }
 
-    public void removeExperienceFromTrip(int experienceID)
+    public void removeExperienceFromTrip(Experience e)
     {
-        throw new UnsupportedOperationException("Not implemented");
+        for(ScheduledExperience se: ScheduledExperiences )
+        {
+            if(se.experience == e){
+                ScheduledExperiences.remove(se);
+                return;
+            }
+        }
+        
     }
 }
