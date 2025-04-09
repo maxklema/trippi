@@ -45,7 +45,8 @@ public class Main {
         Date startDate = sdf.parse("2025-04-23");
         Date endDate = sdf.parse("2025-04-29");
 
-        ScheduledExperience scheduledExperienceOne = new ScheduledExperience(experienceOne, "The best hotel in the world!", startDate, endDate);
+        ScheduledExperience scheduledExperienceOne = new ScheduledExperience(experienceOne,
+                "The best hotel in the world!", startDate, endDate);
 
         ArrayList<ScheduledExperience> scheduledExperiences = new ArrayList<ScheduledExperience>();
         scheduledExperiences.add(scheduledExperienceOne);
