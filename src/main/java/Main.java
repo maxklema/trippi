@@ -24,11 +24,14 @@ public class Main {
         admin.approveExperienceProvider(restaurantProvider);
 
         // Create an Experience Provider Employee through Experience Provider
-        airlineProvider.createEmployeeAccount("Harold Emp", "harrye", "harrye@seet.com");
+        Employee e = airlineProvider.createEmployeeAccount("Harold Emp", "harrye", "harrye@seet.com");
+        System.out.println("Created: "+e.name);
 
-        hotelProvider.createEmployeeAccount("Jonas Schastanovich", "jonass", "jonass@seetvillas.com");
+        e= hotelProvider.createEmployeeAccount("Jonas Schastanovich", "jonass", "jonass@seetvillas.com");
+        System.out.println("Created: "+e.name);
 
-        restaurantProvider.createEmployeeAccount("Signor Grancho", "mrkrab", "grancho@cantacrust.com");
+        e= restaurantProvider.createEmployeeAccount("Signor Grancho", "mrkrab", "grancho@cantacrust.com");
+        System.out.println("Created: "+e.name);
 
         // Add some Experiences through the Experience Provider
 

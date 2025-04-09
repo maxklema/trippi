@@ -28,8 +28,10 @@ public class ExperienceProvider {
         return experiences;
     }
 
-    public void createEmployeeAccount(String name, String email, String username) {
-        employees.add(new ExperienceProviderEmployee(666, ExperienceProviderID, name, username, email, this));
+    public ExperienceProviderEmployee createEmployeeAccount(String name, String email, String username) {
+        ExperienceProviderEmployee e =new ExperienceProviderEmployee(666, ExperienceProviderID, name, username, email, this);
+        employees.add(e);
+        return e;
     }
 
     public void closeEmployeeAccount(User employee) {
