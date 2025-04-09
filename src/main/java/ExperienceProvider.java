@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExperienceProvider 
-{
+public class ExperienceProvider {
     private int ExperienceProviderID;
     private String name;
     private ArrayList<Experience> experiences;
@@ -11,10 +10,7 @@ public class ExperienceProvider
     private ExperienceProviderEmployee owner;
     private ArrayList<ExperienceProviderEmployee> employees;
 
-    
-    
-    public ExperienceProvider(String name, String website, String email)
-    {
+    public ExperienceProvider(String name, String website, String email) {
         ExperienceProviderID = 999;
         this.name = name;
         this.website = website;
@@ -22,38 +18,29 @@ public class ExperienceProvider
         owner = null;
         employees = new ArrayList<ExperienceProviderEmployee>();
         experiences = new ArrayList<Experience>();
-
     }
-    
+
     public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
+        return this.name;
     }
 
-    public List<Experience> getExperiences()
-    {
+    public ArrayList<Experience> getExperiences() {
         return experiences;
     }
 
-    public void createEmployeeAccount(String name, String email, String username)
-    {
+    public void createEmployeeAccount(String name, String email, String username) {
         employees.add(new ExperienceProviderEmployee(666, ExperienceProviderID, name, username, email, this));
     }
 
-    public void closeEmployeeAccount(User employee)
-    {
-        if(!(employee instanceof ExperienceProviderEmployee))
-        {
+    public void closeEmployeeAccount(User employee) {
+        if (!(employee instanceof ExperienceProviderEmployee)) {
             return;
         }
 
-        employees.remove((ExperienceProviderEmployee)employee);
+        employees.remove((ExperienceProviderEmployee) employee);
     }
 
-    public void addOwner(ExperienceProviderEmployee e)
-    {
+    public void addOwner(ExperienceProviderEmployee e) {
         owner = e;
     }
 

@@ -1,7 +1,6 @@
 // package trippi.example.com.example;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.concurrent.ScheduledExecutorService;
 
@@ -24,7 +23,8 @@ public class Main {
         // Create an Experience Provider Employee through Experience Provider
         ExperienceProvider hotelProvider = new ExperienceProvider("SEET Villas", "seetvillas.com", "@seetvillas.com");
 
-        ExperienceProvider restaurantProvider = new ExperienceProvider("Cantankerous Crustaceon", "cantacrust.com", "@cantacrust.com");
+        ExperienceProvider restaurantProvider = new ExperienceProvider("Cantankerous Crustaceon", "cantacrust.com",
+                "@cantacrust.com");
         admin.approveExperienceProvider(restaurantProvider);
 
         // Create an Experience Provider Employee through Experience Provider
@@ -43,7 +43,7 @@ public class Main {
         ArrayList<Availability> availabilities = new ArrayList<Availability>();
         HashSet<Review> reviews = new HashSet<Review>();
         ArrayList<PhotoObject> photos = new ArrayList<PhotoObject>();
-        Experience experienceOne = new Experience(1, availabilities, photos, "Stay in the world famous Seet Hotel!", reviews);
+        Experience experienceOne = new Experience(1);
 
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -56,7 +56,10 @@ public class Main {
 
         ScheduledExperience scheduledExperienceOne = new ScheduledExperience(experienceOne, "The best hotel in the world!", startDate, endDate);
 
-        Trip tripOne = new Trip(1, new ArrayList<ScheduledExperience>(scheduledExperienceOne));
+        ArrayList<ScheduledExperience> scheduledExperiences = new ArrayList<ScheduledExperience>();
+        scheduledExperiences.add(scheduledExperienceOne);
+
+        Trip tripOne = new Trip(1);
 
         // Schedule Experiences on the trips
         // Have the customer leave some Reviews
