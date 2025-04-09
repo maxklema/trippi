@@ -1,34 +1,34 @@
 public class Administrator {
     private int adminID;
 
-    public int getAdminID() {
+    private int getAdminID() {
         return this.adminID;
     }
 
-    public void setAdminID(int newAdminID) {
+    private void setAdminID(int newAdminID) {
         this.adminID = newAdminID;
     }
 
-    public Boolean deleteUser(int userID) {
-        System.out.println("User " + userID + " Deleted");
+    private Boolean deleteUser(User user) {
+        System.out.println("User " + user.getUserID() + " Deleted");
         return true;
     }
 
-    public Boolean deleteReview(int reviewID) {
-        System.out.println("Review " + reviewID + " deleted");
+    private Boolean deleteReview(Review review) {
+        System.out.println("Review " + review.getReviewID() + " deleted");
         return true;
     }
 
-    public Boolean ApproveExperienceProvider(int experienceProviderID) {
-        System.out.println("Approved Experience Provider for " + experienceProviderID);
+    private Boolean ApproveExperienceProvider(ExperienceProvider experienceProvider) {
+        System.out.println("Approved Experience Provider for " + experienceProvider.getName());
         return true;
     }
 
-    public void closeAccount(int userID) {
-        System.out.println("Deleted account for " + userID);
+    private void closeAccount(User user) {
+        System.out.println("Deleted account for " + user.getUserID());
     }
 
-    public void addExperienceProvider(String name, String website, String corporateEmail) {
-        System.out.println("Name: " + name + "\nWebsite: " + website + "\nCorporateEmail: " + corporateEmail);
+    private ExperienceProvider addExperienceProvider(String name, String website, String corporateEmail) {
+        return newExperienceProvider(name, website, corporateEmail);
     }
 }
