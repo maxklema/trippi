@@ -12,7 +12,8 @@ public record ScheduledExperience(
 
     @Override
     public final String toString() {
-        return String.format("%s%nFrom %s to %s.", experience.toString(), timeStart.toString(), timeEnd.toString());
+        return String.format("%s%nFrom %s to %s.", experience.toString(), timeStart.toString(),
+                timeEnd.toString());
     }
 
 }

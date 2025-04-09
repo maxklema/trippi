@@ -28,6 +28,7 @@ public class Experience {
     public int getExperienceID() {
         return experienceID;
     }
+
     public void setExperienceID(int ID) {
         this.experienceID = ID;
     }
@@ -35,15 +36,19 @@ public class Experience {
     public ArrayList<Availability> getAvailabilitySchedule() {
         return availabilitySchedule;
     }
+
     public void addAvailability(Availability a) {
         this.availabilitySchedule.add(a);
     }
+
     public void removeAvailability(Availability a) {
         this.availabilitySchedule.remove(a);
     }
+
     public void setAvailabilitySchedule(ArrayList<Availability> availabilities) {
         this.availabilitySchedule = availabilities;
     }
+
     public void clearAvailabilitySchedule() {
         this.availabilitySchedule.clear();
     }
@@ -51,15 +56,19 @@ public class Experience {
     public ArrayList<PhotoObject> getPictures() {
         return pictures;
     }
+
     public void addPicture(PhotoObject picture) {
         this.pictures.add(picture);
     }
+
     public void removePicture(PhotoObject picture) {
         this.pictures.remove(picture);
     }
+
     public void setPictures(ArrayList<PhotoObject> pictures) {
         this.pictures = pictures;
     }
+
     public void clearPictures() {
         this.pictures.clear();
     }
@@ -67,6 +76,7 @@ public class Experience {
     public String getDescription() {
         return description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -74,17 +84,34 @@ public class Experience {
     public HashSet<Review> getReviews() {
         return reviews;
     }
+
     public void addReview(Review review) {
+        System.out.println(
+                "New Review added: " + review.getContents());
         this.reviews.add(review);
     }
+
     public void removeReview(Review review) {
         this.reviews.remove(review);
     }
+
     public void setReviews(HashSet<Review> reviews) {
         this.reviews = reviews;
     }
+
     public void clearReviews() {
         this.reviews.clear();
+    }
+
+    @Override
+    public String toString() {
+        return "Experience{" +
+                "experienceID=" + experienceID +
+                ", availabilityCount=" + (availabilitySchedule != null ? availabilitySchedule.size() : 0) +
+                ", pictureCount=" + (pictures != null ? pictures.size() : 0) +
+                ", description='" + description + '\'' +
+                ", reviewCount=" + (reviews != null ? reviews.size() : 0) +
+                '}';
     }
 
 }

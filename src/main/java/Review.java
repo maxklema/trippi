@@ -1,4 +1,4 @@
-    import java.util.Date;
+import java.util.Date;
 
 public class Review {
 
@@ -10,7 +10,8 @@ public class Review {
     private int helpfulRating;
     private Date dateTime;
 
-    public Review(int reviewID, User reviewUser, Experience reviewExperience, String contents, int experienceRating, int helpfulRating, Date dateTime) {
+    public Review(int reviewID, User reviewUser, Experience reviewExperience, String contents, int experienceRating,
+            int helpfulRating, Date dateTime) {
         this.reviewID = reviewID;
         this.reviewUser = reviewUser;
         this.reviewExperience = reviewExperience;
@@ -19,12 +20,17 @@ public class Review {
         this.helpfulRating = helpfulRating;
         this.dateTime = dateTime;
 
+        this.addReview();
+    }
+
+    private void addReview() {
         ReviewManager.addReview(this);
     }
 
     public int getReviewID() {
         return reviewID;
     }
+
     public void setReviewID(int ID) {
         this.reviewID = ID;
     }
@@ -32,6 +38,7 @@ public class Review {
     public User getReviewUser() {
         return reviewUser;
     }
+
     public void setReviewUser(User user) {
         this.reviewUser = user;
     }
@@ -39,6 +46,7 @@ public class Review {
     public Experience getReviewExperience() {
         return reviewExperience;
     }
+
     public void setReivewExperience(Experience experience) {
         this.reviewExperience = experience;
     }
@@ -46,6 +54,7 @@ public class Review {
     public String getContents() {
         return contents;
     }
+
     public void setContents(String contents) {
         this.contents = contents;
     }
@@ -53,9 +62,11 @@ public class Review {
     public int getExperienceRating() {
         return experienceRating;
     }
+
     public void setExperienceRating(int rating) {
         this.experienceRating = rating;
     }
+
     public void addExperienceRating(int rating) {
         this.experienceRating += rating;
     }
@@ -63,9 +74,11 @@ public class Review {
     public int getHelpfulRating() {
         return helpfulRating;
     }
+
     public void setHelpfulRating(int rating) {
         this.helpfulRating = rating;
     }
+
     public void addHelpfulRating(int rating) {
         this.helpfulRating += rating;
     }
@@ -73,6 +86,7 @@ public class Review {
     public Date getDateTime() {
         return dateTime;
     }
+
     public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }
