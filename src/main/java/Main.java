@@ -11,6 +11,7 @@ public class Main {
 
         // Create an Administrator
         Administrator admin = new Administrator("Stoat Jefferson", "jeffystoat", "jeffes@trippi.com");
+        System.out.println("Admin " + admin.getName() + " was created.");
 
         // Create Experience Providers, approve through admin
         ExperienceProvider airlineProvider = new ExperienceProvider("SEET Air", "air.seet.com", "@seet.com");
