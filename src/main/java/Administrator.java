@@ -1,9 +1,10 @@
-public class Administrator {
-    
+public class Administrator implements User {
+
     private String name;
     private String userName;
     private String email;
-    
+    private User.UserType userType = User.UserType.Administrator;
+
     public Administrator(String name, String userName, String email) {
         this.name = name;
         this.userName = userName;
@@ -13,6 +14,7 @@ public class Administrator {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -20,13 +22,19 @@ public class Administrator {
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public User.UserType getUserType() {
+        return this.userType;
     }
 
     public String getUsername() {
         return userName;
     }
+
     public void setUsername(String userName) {
         this.userName = userName;
     }
@@ -48,6 +56,11 @@ public class Administrator {
 
     public void closeAccount(User user) {
         System.out.println("Deleted account for " + user.getName());
+    }
+
+    @Override
+    public void closeAccount() {
+        System.out.println("Deleted account for " + this.userName);
     }
 
     public ExperienceProvider addExperienceProvider(String name, String website, String corporateEmail) {

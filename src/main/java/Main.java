@@ -47,8 +47,6 @@ public class Main {
                 Customer newCustomer = new Customer("Joe Mama", "4010 West Housing Drive", 260433590);
                 System.out.println("Created A Very foolish Customer:" + newCustomer.getName());
 
-                // Create a Customer
-
                 // Create an Experience
                 Experience hotelExperience = new Experience(1, "The SEET five star hotel!");
 
@@ -91,5 +89,7 @@ public class Main {
                 System.out.println(tripOne.generateItenerary()); // print itenerary
 
                 // Remove a review through Admninistrator
+                admin.deleteReview(reviewOne);
+                admin.deleteReview(reviewTwo);
         }
 }

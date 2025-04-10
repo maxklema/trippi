@@ -10,4 +10,8 @@ public class Availability {
         this.location = location;
     }
 
+    public String getDate() {
+        return this.dateTime.toString();
+    }
+
 }

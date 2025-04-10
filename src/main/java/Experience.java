@@ -38,6 +38,7 @@ public class Experience {
     }
 
     public void addAvailability(Availability a) {
+        System.out.println("New availability added at: " + a.getDate());
         this.availabilitySchedule.add(a);
     }
 
@@ -58,6 +59,7 @@ public class Experience {
     }
 
     public void addPicture(PhotoObject picture) {
+        System.out.println("New Photo Uploaded!");
         this.pictures.add(picture);
     }
 
