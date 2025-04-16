@@ -91,4 +91,14 @@ public class Review {
         this.dateTime = dateTime;
     }
 
+    public String toString() {
+        return String.format("Review left by %s on %s, contents: \"%s\", rating: %d, helpfulRating: %d, dateTime: %s", reviewUser.getName(), reviewExperience.getDescription(), contents, experienceRating, helpfulRating, dateTime.toString());
+    }
+
+    public void modifyReview(String contents, int experienceRating, int helpfulRating, Date dateTime) {
+        this.contents = contents;
+        this.experienceRating = experienceRating;
+        this.helpfulRating = helpfulRating;
+        this.dateTime = dateTime;
+    }
 }

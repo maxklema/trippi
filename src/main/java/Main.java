@@ -1,7 +1,5 @@
 // package trippi.example.com.example;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -44,7 +42,7 @@ public class Main {
                 System.out.println("Created Employee: " + e.getName());
 
                 // Create a Customer
-                Customer newCustomer = new Customer("Joe Mama", "4010 West Housing Drive", 260433590);
+                Customer newCustomer = new Customer("Joseph Mamara", "4010 West Housing Drive", 260433590);
                 System.out.println("Created A Very foolish Customer:" + newCustomer.getName());
 
                 // Create an Experience
@@ -91,5 +89,13 @@ public class Main {
                 // Remove a review through Admninistrator
                 admin.deleteReview(reviewOne);
                 admin.deleteReview(reviewTwo);
+
+                System.out.println("Testing Reviews ----------");
+
+                Review review1 = new Review(0, newCustomer, hotelExperience, "This is a first review.", 5, 10, new Date(0));
+                System.out.println(review1.toString());
+
+                Review review2 = new Review(0, newCustomer, hotelExperience, "This is a second review.", 5, 10, new Date(0));
+                System.out.println(review2.toString());
         }
 }
