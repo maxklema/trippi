@@ -9,16 +9,19 @@ public class Main {
 
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-                // Create an Administrator
+                // CREATE AN ADMINISTRATOR
+                // -----------------------------------
                 Administrator admin = new Administrator("Stoat Jefferson", "jeffystoat", "jeffes@trippi.com");
                 System.out.println("Admin " + admin.getName() + " was created.");
 
-                // Create Experience Providers, approve through admin
+                // CREATE EXPERIENCE PROVIDERS, APPROVE THROUGH ADMIN
+                // -----------------------------------
                 ExperienceProvider airlineProvider = new ExperienceProvider("SEET Air", "air.seet.com", "@seet.com");
                 System.out.println(airlineProvider.getName() + " was created!");
                 admin.approveExperienceProvider(airlineProvider);
 
-                // Create an Experience Provider Employee through Experience Provider
+                // CREATE AN EXPERIENVCE PROVIDER EMPLOYEE THROUGH EXPERIENCE PROVIDER
+                // -----------------------------------
                 ExperienceProvider hotelProvider = new ExperienceProvider("SEET Villas", "seetvillas.com",
                                 "@seetvillas.com");
                 System.out.println(hotelProvider.getName() + " was created!");
@@ -30,7 +33,8 @@ public class Main {
                 System.out.println(restaurantProvider.getName() + " was created!");
                 admin.approveExperienceProvider(restaurantProvider);
 
-                // Create an Experience Provider Employee through Experience Provider
+                // CREATE EXPERIENCE PROVIDER EMPLOYEE THROUGH EXPERIENCE PROVIDER
+                // -----------------------------------
                 ExperienceProviderEmployee e = airlineProvider.createEmployeeAccount("Harold Emp", "harrye",
                                 "harrye@seet.com");
                 System.out.println("Created Employee: " + e.getName());
@@ -41,14 +45,17 @@ public class Main {
                 e = restaurantProvider.createEmployeeAccount("Signor Grancho", "mrkrab", "grancho@cantacrust.com");
                 System.out.println("Created Employee: " + e.getName());
 
-                // Create a Customer
+                // CREATE A CUSTOMER
+                // -----------------------------------
                 Customer newCustomer = new Customer("Joseph Mamara", "4010 West Housing Drive", 260433590);
                 System.out.println("Created A Very foolish Customer:" + newCustomer.getName());
 
-                // Create an Experience
+                // CREATE AN EXPERIENCE
+                // -----------------------------------
                 Experience hotelExperience = new Experience(1, "The SEET five star hotel!");
 
-                // Create Availabilities
+                // CREATE AVAILABILITIES
+                // -----------------------------------
                 Date spaDateAvailability = sdf.parse("2025-05-12");
                 Date barDateAvailability = sdf.parse("2025-05-13");
                 Date poolDateAvailability = sdf.parse("2025-05-17");
@@ -57,11 +64,13 @@ public class Main {
                 hotelExperience.addAvailability(new Availability(barDateAvailability, "Seet Hotel Bar"));
                 hotelExperience.addAvailability(new Availability(poolDateAvailability, "Seet Hotel Pool"));
 
-                // create Photos
+                // CREATE PHOTOS
+                // -----------------------------------
                 hotelExperience.addPicture(new PhotoObject());
                 hotelExperience.addPicture(new PhotoObject());
 
-                // add Reviews
+                // ADD REVIEWS
+                // -----------------------------------
                 Date reviewOneDate = sdf.parse("2025-03-12");
                 Date ReviewTwoDate = sdf.parse("2025-02-27");
 
@@ -77,25 +86,30 @@ public class Main {
                 Date startDate = sdf.parse("2025-04-23");
                 Date endDate = sdf.parse("2025-04-29");
 
-                // Create a Scheduled Experience
+                // CREATE A SCHEDULED EXPERIENCE
+                // -----------------------------------
                 ScheduledExperience scheduledhotelExperience = new ScheduledExperience(hotelExperience,
                                 "The best hotel in the world!", startDate, endDate);
 
-                // Create a trip
+                // CREATE A TRIP
+                // -----------------------------------
                 Trip tripOne = new Trip(1);
                 tripOne.addExperienceToTrip(scheduledhotelExperience);
                 System.out.println(tripOne.generateItenerary()); // print itenerary
 
-                // Remove a review through Admninistrator
+                // REMOVE A REVIEW THROUGH AN ADMINISTRATOR
+                // -----------------------------------
                 admin.deleteReview(reviewOne);
                 admin.deleteReview(reviewTwo);
 
                 System.out.println("Testing Reviews ----------");
 
-                Review review1 = new Review(0, newCustomer, hotelExperience, "This is a first review.", 5, 10, new Date(0));
+                Review review1 = new Review(0, newCustomer, hotelExperience, "This is a first review.", 5, 10,
+                                new Date(0));
                 System.out.println(review1.toString());
 
-                Review review2 = new Review(0, newCustomer, hotelExperience, "This is a second review.", 5, 10, new Date(0));
+                Review review2 = new Review(0, newCustomer, hotelExperience, "This is a second review.", 5, 10,
+                                new Date(0));
                 System.out.println(review2.toString());
         }
 }
